@@ -9,8 +9,11 @@ Pure static HTML/CSS/JS, no build step, no backend. Works on GitHub Pages.
 
 ## How it works
 
-- `frames/frame_001.jpg` … `frame_036.jpg` — the 360° spin sequence, one
-  image per few degrees, extracted from a video.
+- `frames/frame_001.jpg` … `frame_012.jpg` — the spin sequence: a handful
+  of still photos taken evenly around the truck (12 by default — enough to
+  feel interactive without needing a video). Works the same whether the
+  images come from stills you took by hand or frames extracted from a
+  video later.
 - `scenes/*.jpg` — separate close-up photos for angles the spin doesn't
   cover well (engine bay, interior, bed, undercarriage).
 - `data/mods.json` — the master mod list (name, brand, link, description).
@@ -22,25 +25,32 @@ Pure static HTML/CSS/JS, no build step, no backend. Works on GitHub Pages.
 
 ## Order of operations (what I need from you)
 
-**1. Shoot the walk-around video.**
-- Phone in landscape, waist-to-chest height, truck roughly centered the
-  whole way around.
-- Walk one smooth, steady circle around the truck (10–20 seconds), same
-  distance throughout. A phone gimbal or just slow careful walking both
-  work; the frame extraction below smooths out timing but not shakiness.
-- Even, consistent light — overcast day or shade is more forgiving than
-  direct sun (no side of the truck should suddenly get blown out or go
-  dark as you walk around it).
+**1. Shoot 12 still photos evenly around the truck.**
+- Landscape orientation, camera at the same height for every shot
+  (waist-to-chest), same distance from the truck every time, truck roughly
+  centered in frame.
+- Rotate about every 30° between shots (12 shots ≈ full circle). Doesn't
+  need to be exact — pacing it out by eye around the truck is fine. If you
+  have driveway/pavement marks or a tape measure, even better, but not
+  required.
+- Take them in one session so the light doesn't shift between shots — no
+  side of the truck should look noticeably brighter/darker than the others
+  when you spin through them. Overcast light or shade is the most
+  forgiving.
 - Clean, uncluttered background if possible (driveway, empty lot).
 - Also grab: 1 photo of the engine bay, 1 of the interior, and any other
   close-ups for mods that won't read from the walk-around distance
   (exhaust tip, skid plates, etc.) — these become "scenes."
+- Fewer than 12 is fine to start (even 8 works — just update
+  `totalFrames` in `data/hotspots.json` to match how many you shot), you
+  can always add more later.
 
-**2. Send me the video (and close-up photos).** I'll extract evenly-spaced
-frames for you (or you can run `scripts/extract-frames.sh your-video.mov 36`
-yourself if you have `ffmpeg` installed — see the script header). Drop the
-resulting `frame_001.jpg…frame_036.jpg` into `/frames`, and the close-ups
-into `/scenes`.
+**2. Send me the photos.** Name them so the order is obvious (or just tell
+me the order) and I'll drop them into `/frames` as `frame_001.jpg`,
+`frame_002.jpg`, etc. (going the same direction around the truck), and the
+close-ups into `/scenes`. If you get a walk-around video later, you can
+swap in more frames at once with `scripts/extract-frames.sh` — the site
+doesn't change either way.
 
 **3. Send me your mod list.** For each mod: name, brand, category
 (Exterior / Performance / Interior / Suspension / etc.), a link (product

@@ -1,5 +1,5 @@
 {
-  "totalFrames": 36,
+  "totalFrames": 12,
   "framePathPattern": "frames/frame_{n}.jpg",
   "frameNumberPadding": 3,
   "mods": {

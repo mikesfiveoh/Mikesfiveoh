@@ -301,7 +301,7 @@
   async function init() {
     const mods = await loadJSON("data/mods.json", { mods: [] });
     const hotspots = await loadJSON("data/hotspots.json", {
-      totalFrames: 36,
+      totalFrames: 12,
       framePathPattern: "frames/frame_{n}.jpg",
       frameNumberPadding: 3,
       mods: {},
