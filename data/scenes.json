@@ -1,0 +1,24 @@
+{
+  "scenes": [
+    {
+      "id": "engine-bay",
+      "label": "Engine Bay",
+      "triggerFrame": 9,
+      "triggerX": 70.0,
+      "triggerY": 45.0,
+      "image": "scenes/engine-bay.jpg",
+      "hotspots": [
+        { "modId": "cold-air-intake", "x": 55.0, "y": 40.0 }
+      ]
+    },
+    {
+      "id": "interior",
+      "label": "Interior",
+      "triggerFrame": 1,
+      "triggerX": 55.0,
+      "triggerY": 50.0,
+      "image": "scenes/interior.jpg",
+      "hotspots": []
+    }
+  ]
+}

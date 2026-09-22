@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hotspot Editor (local tool)</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/editor.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <h1>Hotspot Editor</h1>
+    <span>Local-only tool for placing mod dots. Not linked from the public site.</span>
+  </div>
+  <a class="ig-link" href="index.html">&larr; Back to site</a>
+</header>
+
+<main class="editor-main">
+  <section class="viewer-panel">
+    <div class="editor-toolbar">
+      <label>
+        Mode
+        <select id="mode-select">
+          <option value="spin">Spin hotspots</option>
+          <option value="scene-trigger">Scene entry points (on spin frames)</option>
+          <option value="scene-hotspot">Hotspots inside a scene image</option>
+        </select>
+      </label>
+      <label id="mod-select-wrap">
+        Mod
+        <select id="mod-select"></select>
+      </label>
+      <label id="scene-select-wrap" style="display:none">
+        Scene
+        <select id="scene-select"></select>
+      </label>
+    </div>
+
+    <div class="spin-stage" id="spin-stage">
+      <div class="spin-placeholder" id="spin-placeholder">
+        No frames found in <code>/frames</code>. Extract frames first (see README), then reload this page.
+      </div>
+    </div>
+
+    <div class="viewer-controls">
+      <span id="frame-counter">Frame — / —</span>
+      <span id="editor-hint">Click on the truck to place/move a point for the selected mod at this frame.</span>
+    </div>
+  </section>
+
+  <aside class="mods-panel">
+    <h2>Keyframes for selected mod</h2>
+    <div id="keyframe-list"></div>
+
+    <h2 style="margin-top:16px">Export</h2>
+    <div class="export-actions">
+      <button id="download-hotspots">Download hotspots.json</button>
+      <button id="download-scenes">Download scenes.json</button>
+    </div>
+    <p class="editor-note">
+      Downloaded files replace <code>data/hotspots.json</code> / <code>data/scenes.json</code> in the project.
+      Refresh this page after replacing them to keep editing.
+    </p>
+  </aside>
+</main>
+
+<script src="js/editor.js"></script>
+</body>
+</html>

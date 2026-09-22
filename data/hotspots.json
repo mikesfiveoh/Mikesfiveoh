@@ -1,0 +1,14 @@
+{
+  "totalFrames": 36,
+  "framePathPattern": "frames/frame_{n}.jpg",
+  "frameNumberPadding": 3,
+  "mods": {
+    "front-bumper": [
+      { "frame": 1, "x": 32.5, "y": 55.0 },
+      { "frame": 9, "x": 50.0, "y": 52.0 }
+    ],
+    "cold-air-intake": [
+      { "frame": 5, "x": 60.0, "y": 40.0 }
+    ]
+  }
+}

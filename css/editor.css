@@ -1,0 +1,90 @@
+.editor-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .editor-main { grid-template-columns: 1fr; }
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.editor-toolbar label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.editor-toolbar select {
+  background: var(--bg-panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  min-width: 180px;
+}
+
+#spin-stage { cursor: crosshair; }
+
+.keyframe-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  background: var(--bg-panel-2);
+}
+
+.keyframe-row button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 6px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.keyframe-row button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.export-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.export-actions button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.export-actions button:hover { opacity: 0.9; }
+
+.editor-note {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 10px;
+  line-height: 1.4;
+}
